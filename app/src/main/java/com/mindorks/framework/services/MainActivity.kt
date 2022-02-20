@@ -1,14 +1,19 @@
 package com.mindorks.framework.services
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        class jon(){
+       findViewById<Button>(R.id.btn_StartService).setOnClickListener{
+
+           val serviceIntent = Intent(this, DownloadService::class.java)
+           startService(serviceIntent)
 
         }
     }
